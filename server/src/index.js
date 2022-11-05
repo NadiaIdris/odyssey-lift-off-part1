@@ -23,6 +23,7 @@ const mocks = {
 
 // Shorthand property notation. {typeDefs: typeDefs} is the same as {typeDefs}.
 const server = new ApolloServer({
+  // Options go here.
   typeDefs: typeDefs,
   mocks: mocks,
 });
