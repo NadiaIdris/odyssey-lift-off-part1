@@ -23,15 +23,18 @@ const mocks = {
 
 // Shorthand property notation. {typeDefs: typeDefs} is the same as {typeDefs}.
 const server = new ApolloServer({
+  playground: true,
   // Options go here.
+  // Schema:
   typeDefs: typeDefs,
+  // Mock data or resolvers:
   mocks: mocks,
 });
 
-server.listen().then(() => {
+server.listen({ port: 8000 }).then(({ url }) => {
   console.log(`
-    🚀 Server is running!
-    🔉 Listning on port 4000
-    📪 Query at http://localhost:4000
+    🚀 Server is running at ${url}
+    🔉 Listning on port 8000
+    📪 Query at http://localhost:8000
   `);
 });
